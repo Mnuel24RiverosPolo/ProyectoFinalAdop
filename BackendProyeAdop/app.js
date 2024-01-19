@@ -7,17 +7,16 @@ const cors = require('cors');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 var dashRouter = require('./routes/dash');
-var productosRouter = require('./routes/productos')
-var postRouter = require('./routes/posts')
-var comentRouter = require('./routes/coment')
+
+
 var PetRouter = require('./routes/pets')
 var UsuarioRouter = require('./routes/usuarios')
 var NotaRouter = require('./routes/nota')
 var AuthRouter = require('./routes/auth')
 var app = express();
-
+const PORT = process.env.PORT || 3000; 
 // Habilitar CORS para todas las rueeeet
 app.use(cors());
 
@@ -35,11 +34,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
 app.use('/dashboard',dashRouter);
-app.use('/productos', productosRouter);
-app.use('/post', postRouter );
-app.use('/coment', comentRouter );
+
 app.use('/pet', PetRouter );
 app.use('/usuario', UsuarioRouter);
 app.use('/nota', NotaRouter );
@@ -70,6 +67,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor Express escuchando en el puerto ${PORT}`);
 });
 
 module.exports = app;

@@ -10,6 +10,8 @@ exports.authenticateUser = function(req, res) {
   var password = req.body.password;
   console.log(email + password)
 
+  
+
   // Busca el usuario por su dirección de correo electrónico
   User.findOne({ email: email }, function(err, user) {
     if (err) {
@@ -30,14 +32,8 @@ exports.authenticateUser = function(req, res) {
           res.status(200).json({ token});
         }
       });
-      
-      
-     
     }
   });
-
-
-  
 };
 
 // Función para registrar un nuevo usuario

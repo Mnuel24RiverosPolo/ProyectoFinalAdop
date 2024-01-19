@@ -1,3 +1,5 @@
+
+// JSON Web Tokens (JWT)
 const jwt = require('jsonwebtoken');
 const secretKey = 'tu_clave_secreta';
 
