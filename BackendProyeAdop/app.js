@@ -10,7 +10,6 @@ var indexRouter = require('./routes/index');
 
 var dashRouter = require('./routes/dash');
 
-mongoose.set('strictQuery', false);
 var PetRouter = require('./routes/pets')
 var UsuarioRouter = require('./routes/usuarios')
 var NotaRouter = require('./routes/nota')
