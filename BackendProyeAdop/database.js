@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect('mongodb://127.0.0.1:27017/dbpets', {
+mongoose.connect('mongodb+srv://manuelriveros:zie1sHwgoxrna8Gu@cluster0m.ujhpofr.mongodb.net/prueba?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
